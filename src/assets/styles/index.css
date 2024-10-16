@@ -1,0 +1,100 @@
+@import "typography.css";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+
+  .custom-container {
+    @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .header {
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out,
+      background-image 0.3s ease-in-out;
+  }
+  
+  .gradient {
+    background-color: #45a7e2 !important;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    transition: background-color 0.3s ease-in-out;
+  }
+
+
+::-webkit-scrollbar {
+  width: 8px; 
+}
+
+::-webkit-scrollbar-button {
+  display: none; 
+}
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 4px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8c8c8c;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s forwards;
+}
+
+.animate-text-reveal {
+  display: inline-block;
+  animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  animation-fill-mode: backwards;
+}
+
+@keyframes reveal {
+  0% {
+    transform: translate(0, 150%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+  .hamburger-toggle {
+    @apply [&>div]:h-0 [&>div]:bg-white [&>div]:before:translate-y-0 [&>div]:before:rotate-45 [&>div]:after:translate-y-0 [&>div]:after:-rotate-45;
+  }
